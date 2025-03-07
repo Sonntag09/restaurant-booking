@@ -1,0 +1,135 @@
+{
+	"info": {
+		"_postman_id": "f8fb9366-e5b4-40f7-b7ce-2cfa96d72fb1",
+		"name": "restaurant-booking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14533406"
+	},
+	"item": [
+		{
+			"name": "get reservations",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{LARAVEL_API}}/reservations?date=08.03.2025",
+					"host": [
+						"{{LARAVEL_API}}"
+					],
+					"path": [
+						"reservations"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "08.03.2025"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create reservation",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "reservation_date",
+							"value": "08.03.2025",
+							"type": "text"
+						},
+						{
+							"key": "reservation_time",
+							"value": "14:00",
+							"type": "text"
+						},
+						{
+							"key": "guest_count",
+							"value": "4",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{LARAVEL_API}}/reservations",
+					"host": [
+						"{{LARAVEL_API}}"
+					],
+					"path": [
+						"reservations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cancel reservation",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{LARAVEL_API}}/reservations/1",
+					"host": [
+						"{{LARAVEL_API}}"
+					],
+					"path": [
+						"reservations",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "LARAVEL_API",
+			"value": "http://localhost:8000/api",
+			"type": "string"
+		}
+	]
+}
